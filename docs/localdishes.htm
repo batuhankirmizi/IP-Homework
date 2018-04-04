@@ -4,25 +4,34 @@
     <head>
         
         <meta charset="utf-8">
+        
         <title>Eskişehir</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- Bootstrap -->
+        
+        <link rel="stylesheet" href="styles/general.css" />
         
     </head>
     
     <body>
         
-        <hr>
-        
         <nav>
             <center>
-                <table style = "width:100%" border="1px">
-                    <tr>
-                        <th><a href="index.htm" style="font-family:sans-serif;font-size:16px;width:1%;font-weight:normal">Home</a></th>
-                        <th><a href="localdishes.htm" style="font-family:sans-serif;font-size:24px;width:1%;font-weight:normal;color:blue;text-decoration:none">Local Dishes</a></th>
-                        <th><a href="historicalplaces.htm" style="font-family:sans-serif;font-size:16px;width:1%;font-weight:normal">Historical Places</a></th>
-                        <th><a href="usefullinks.htm" style="font-family:sans-serif;font-size:16px;width:1%;font-weight:normal">Useful Links</a></th>
-                        <th><a href="aboutme.htm" style="font-family:sans-serif;font-size:16px;width:1%;font-weight:normal">About me</a></th>
-                        <th><a href="contactme.htm" style="font-family:sans-serif;font-size:16px;width:1%;font-weight:normal">Contact me</a></th>
-                        <th><a href="registration.htm" style="font-family:sans-serif;font-size:16px;width:1%;font-weight:normal">Registration</a></th>
+                <table class="table">
+                    <tr class="table-primary">
+                        <th scope="col"><a href="index.htm">Home</a></th>
+                        <th scope="col" class="active"><a href="localdishes.htm">Local Dishes</a></th>
+                        <th scope="col"><a href="historicalplaces.htm">Historical Places</a></th>
+                        <th scope="col"><a href="usefullinks.htm">Useful Links</a></th>
+                        <th scope="col"><a href="aboutme.htm">About me</a></th>
+                        <th scope="col"><a href="contactme.htm">Contact me</a></th>
+                        <th scope="col"><a href="registration.htm">Registration</a></th>
                     </tr>
                 </table>
             </center>
@@ -30,22 +39,24 @@
         
         <hr>
             
-        <center>
-            <p style="font-size:19px">Some local dishes from Eskişehir</p>
-        </center>
+        <div>
+            <center>
+                <p>Some local dishes from Eskişehir</p>
+            </center>
+        </div>
         
         <hr>
         
+        <div class="sub-title">
+            <b>Balaban Köfte</b>
+        </div>
+        
         <div>
-            <p style="font-size:24px;font-family:sans-serif">
-                <b>Balaban Köfte</b>
-            </p>
-
-            <p style="font-size:18px;font-family:sans-serif">
-                &nbsp;&nbsp;&nbsp;&nbsp;One of the most famous and delicious dishes of the city is balaban meatballs have been acquired by adding round and flat breads drenched by bone water, tomato sauce, yoghurt and butter onto the grilled meatballs. Everyone who is away from Eskişehir is yearn for balaban köfte, also it is one of the major reasons that makes university youth fall in love with the city.
+            <center>
+            <p>
+                One of the most famous and delicious dishes of the city is balaban meatballs have been acquired by adding round and flat breads drenched by bone water, tomato sauce, yoghurt and butter onto the grilled meatballs. Everyone who is away from Eskişehir is yearn for balaban köfte, also it is one of the major reasons that makes university youth fall in love with the city.
             </p>
             
-            <center>
                 <img src="img/localdishes_balabankofte.jpg" alt="Balaban Köfte" width="400" height="300">
                 <img src="img/localdishes_balabankofte2.jpg" alt="Balaban Köfte" width="400" height="300">
             </center>
@@ -53,35 +64,37 @@
         
         <hr>
         
-        <div>
-            <p style="font-size:24px;font-family:sans-serif">
+        <div class="sub-title">
                 <b>Çibörek</b>
-            </p>
-
-            <p style="font-size:18px;font-family:sans-serif">
-                &nbsp;&nbsp;&nbsp;&nbsp;Although it is known as "çiğbörek" in general, this delicious dish, which is actually called "çibörek", is the most beautiful contribution of Crimean Tatars to Eskişehir. It consists of combination of onion, mincemeat, dough and various spices. Almost every restaurant in Eskişehir offers different kinds of çibörek with different materials. We strongly recommend tasting it with yoghurt or salted sauces.
-            </p>
-
+        </div>
+        
+        <div>
             <center>
+            <p>
+                Although it is known as "çiğbörek" in general, this delicious dish, which is actually called "çibörek", is the most beautiful contribution of Crimean Tatars to Eskişehir. It consists of combination of onion, mincemeat, dough and various spices. Almost every restaurant in Eskişehir offers different kinds of çibörek with different materials. We strongly recommend tasting it with yoghurt or salted sauces.
+            </p>
+
                 <img src="img/localdishes_ciborek.jpg" alt="Çibörek" width="30%" height="30%">
             </center>
         </div>
         
         <hr>
         
-        <div>
-            <p style="font-size:24px;font-family:sans-serif">
+        <div class="sub-title">
                 <b>Met Helvası</b>
-            </p>
-
-            <p style="font-size:18px;font-family:sans-serif">
-                &nbsp;&nbsp;&nbsp;&nbsp;It is the most famous dessert in the city containing flour, sugar, lemon, oil and water. It is very difficult to make this delicious dessert which is enriched with various nuts or cocoa. That's why it would be good to taste this excellence from the places where real masters work instead of doing it at home for a good meal.
-            </p>
-
+        </div>
+        
+        <div>
             <center>
+            <p>
+                It is the most famous dessert in the city containing flour, sugar, lemon, oil and water. It is very difficult to make this delicious dessert which is enriched with various nuts or cocoa. That's why it would be good to taste this excellence from the places where real masters work instead of doing it at home for a good meal.
+            </p>
+
                 <img src="img/localdishes_methelvasi.jpg" alt="Met Helvası" width="30%" height="30%">
             </center>
         </div>
+        
+        <hr>
         
     </body>
     
