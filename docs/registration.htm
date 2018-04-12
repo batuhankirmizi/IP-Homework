@@ -7,7 +7,7 @@
         
         <title>Eskişehir</title>
         
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -41,53 +41,58 @@
         
         <div>
             <center>
-                <form action="registration_completed.htm">
-                    <div class="form-group">
-                        Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="firstname" placeholder="Name">
-                            <br>
-                            <br>
-                        Surname:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="lastname" placeholder="Surname">
-                            <br>
-                            <br>
-                        Date of Birth:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" name="birthdate" placeholder="Date of Birth">
-                            <br>
-                            <br>
-                        E-mail:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" name="email" placeholder="E-mail">
-                            <br>
-                            <br>
-                        Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="password" placeholder="Password">
-                            <br>
-                            <br>
-                        Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                                <select>
+                <form action="registration_completed.htm" class="form-vertical container" role="form">
+                    <div class="form-group col-md-12">
+                        <label for="name" class=" container col-md-5">Name:</label>
+                        <input type="text" name="firstname" class="container col-md-7" placeholder="Name">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="surname" class="container col-md-5">Surname:</label>
+                        <input type="text" name="lastname" class="container col-md-7" placeholder="Surname">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="birthdate" class="container col-md-5">Birth Date:</label>
+                        <input type="date" name="birthdate" class="container col-md-7" placeholder="Date of Birth">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="email" class="container col-md-5">E-mail:</label>
+                        <input type="email" name="email" class="container col-md-7" placeholder="E-mail">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="pwd" class="container col-md-5">Password:</label>
+                        <input type="password" name="password" class="container col-md-7" placeholder="Password">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="gender" class="container col-md-5">Gender:</label>
+                                <select class="col-md-7">
                                     <option value="m">Male</option>
                                     <option value="f">Female</option>
                                     <option value="o">Other</option>
                                 </select>
-                            <br>
-                            <br>
-                        Interests: <br>
-                            <input type="checkbox">Volleyball<br>
-                            <input type="checkbox">Swimming<br>
-                            <input type="checkbox">Table tennis<br>
-                            <input type="checkbox">Volleyball<br>
-                            <input type="checkbox">Sleeping<br>
-                            <input type="checkbox">Jogging<br>
-                            <input type="checkbox">Reading book<br>
-                            <input type="checkbox">Listening to music<br>
-                            <input type="checkbox">Turning coffee into code<br>
-                            <br>
-                        Select your favorite color:
-                            <input type="color" name="favcolor">
-                            <br>
-                            <br>
-                        Rate your HTML5 skills out of 5:
-                            <input type="range" name="skills" min="0" max="5">
-                            <br>
-                            <br>
-                        <input type="submit" style="font-size:16px" value="Submit">
-                        <input type="reset" style="font-size:16px" value="Reset">
+                    </div>
+                    <div class="checkbox col-md-12">
+                        <label for="interests" class="col-md-12">Interests:</label>
+                        <label class="col-md-6"><input type="checkbox">Volleyball</label><br>
+                        <label class="col-md-6"><input type="checkbox">Swimming</label><br>
+                        <label class="col-md-6"><input type="checkbox">Table tennis</label><br>
+                        <label class="col-md-6"><input type="checkbox">Sleeping</label><br>
+                        <label class="col-md-6"><input type="checkbox">Jogging</label><br>
+                        <label class="col-md-6"><input type="checkbox">Reading book</label><br>
+                        <label class="col-md-6"><input type="checkbox">Listening to music</label><br>
+                        <label class="col-md-6"><input type="checkbox">Turning coffee into code</label><br>
+                    </div>
+                    <div class="col-md-12">
+                        <label>Select your favorite color:</label>
+                        <input type="color" name="favcolor"></div>
+                    <div class="col-md-6">
+                        <label>Rate your HTML5 skills out of 5:</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="range" name="skills" min="0" max="5">
+                    </div>
+                    <div class="col-md-12">
+                        <input type="submit" style="font-size:16px" value="Submit" class="btn btn-primary">
+                        <input type="reset" style="font-size:16px" value="Reset" class="btn btn-secondary">
                     </div>
                 </form>
             </center>
