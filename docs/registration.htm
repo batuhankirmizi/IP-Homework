@@ -20,6 +20,56 @@
     </head>
     
     <body>
+        <script>
+            function validateForm() {
+                var textRegex = /^[A-Za-z]+$/;
+                
+                var validDate = true;
+
+                var name      = document.forms["registration"]["firstname"].value;
+                var surname   = document.getElementById('sname').value;
+                var birthDate = document.getElementById('birthDate').value;
+                var email     = document.getElementById('email').value;
+                var password  = document.getElementById('password').value;
+
+                if(name.trim() == "")
+                    alert("Please do not leave name field empty.");
+                else if(surname.trim() == "")
+                    alert("Please do not leave surname field empty.");
+                else if(birthDate.trim() == "")
+                    alert("Please do not leave birth date field empty.");
+                else if(email.trim() == "")
+                    alert("Please do not leave email field empty.");
+                else if(password.trim() == "")
+                    alert("Please do not leave password field empty.");
+                else if(!name.match(textRegex))
+                    alert("Please enter only letters to the name field.");
+                else if(!surname.match(textRegex))
+                    alert("Please enter only letters to the surname field.");
+                else if(!validPassword(password))
+                    alert("Password is invalid. Your password has to contain 6 to 15 characters including at least one uppercase letter, numeric digit and special character.");
+                else if(!validEmail(email))
+                    alert("Please enter a valid email address.");
+                else if(validDate == false)
+                    alert("Invalid date.");
+                else return true;
+
+                return false;
+            }
+            
+            function validEmail(email) {
+                 if (!(/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/.test(email)))
+                     return false;
+                return true;
+            }
+            
+            function validPassword(password) {
+                if (/^(?=.[\d])(?=.[A-Z])(?=.[a-z])(?=.[!@#$%^&])[\w!@#$%^&]{8,}$/.test(password))
+                    return true;
+                return false;
+            }
+        </script>
+        
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -48,26 +98,26 @@
         
         <div>
             <center>
-                <form action="registration_completed.htm" class="form-vertical container" role="form">
+                <form name="registration" action="calculator.htm" class="form-vertical container" onsubmit="return validateForm()">
                     <div class="form-group col-md-12">
-                        <label for="name" class=" container col-md-5">Name:</label>
-                        <input type="text" name="firstname" class="container col-md-7" placeholder="Name">
+                        <label for="firstname" class=" container col-md-5">Name:</label>
+                        <input id="fname" type="text" name="firstname" class="container col-md-7" placeholder="Name">
                     </div>
                     <div class="form-group col-md-12">
                         <label for="surname" class="container col-md-5">Surname:</label>
-                        <input type="text" name="lastname" class="container col-md-7" placeholder="Surname">
+                        <input id="sname" type="text" name="lastname" class="container col-md-7" placeholder="Surname">
                     </div>
                     <div class="form-group col-md-12">
                         <label for="birthdate" class="container col-md-5">Birth Date:</label>
-                        <input type="date" name="birthdate" class="container col-md-7" placeholder="Date of Birth">
+                        <input type="date" name="birthdate" id="birthDate" class="container col-md-7" placeholder="Date of Birth">
                     </div>
                     <div class="form-group col-md-12">
                         <label for="email" class="container col-md-5">E-mail:</label>
-                        <input type="email" name="email" class="container col-md-7" placeholder="E-mail">
+                        <input type="text" name="email" id="email" class="container col-md-7" placeholder="E-mail">
                     </div>
                     <div class="form-group col-md-12">
                         <label for="pwd" class="container col-md-5">Password:</label>
-                        <input type="password" name="password" class="container col-md-7" placeholder="Password">
+                        <input type="password" name="password" id="password" class="container col-md-7" placeholder="Password">
                     </div>
                     <div class="form-group col-md-12">
                         <label for="gender" class="container col-md-5">Gender:</label>
