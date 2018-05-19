@@ -58,13 +58,13 @@
             }
             
             function validEmail(email) {
-                 if (!(/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/.test(email)))
+                 if (!((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)))
                      return false;
                 return true;
             }
             
             function validPassword(password) {
-                if (/^(?=.[\d])(?=.[A-Z])(?=.[a-z])(?=.[!@#$%^&])[\w!@#$%^&]{8,}$/.test(password))
+                if (/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&.])[A-Za-z\d$@$!%*?&.]/.test(password))
                     return true;
                 return false;
             }
@@ -148,7 +148,7 @@
                         <input type="range" name="skills" min="0" max="5">
                     </div>
                     <div class="col-md-12">
-                        <input type="submit" style="font-size:16px" value="Submit" class="btn btn-primary">
+                        <input type="submit" style="font-size:16px" value="Submit" class="btn btn-primary" onclick="return validateForm()">
                         <input type="reset" style="font-size:16px" value="Reset" class="btn btn-secondary">
                     </div>
                 </form>
