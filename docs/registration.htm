@@ -22,15 +22,20 @@
     <body>
         <script>
             function validateForm() {
+				alert("Hi");
+				
                 var textRegex = /^[A-Za-z]+$/;
                 
                 var validDate = true;
 
-                var name      = document.forms["registration"]["firstname"].value;
+                var name      = document.getElementById('fname').value;
                 var surname   = document.getElementById('sname').value;
                 var birthDate = document.getElementById('birthDate').value;
                 var email     = document.getElementById('email').value;
                 var password  = document.getElementById('password').value;
+				
+				if(name == "")
+					return false;
 
                 if(name.trim() == "")
                     alert("Please do not leave name field empty.");
@@ -69,7 +74,7 @@
                 return false;
             }
         </script>
-        
+		
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -100,7 +105,7 @@
             <center>
                 <form name="registration" action="calculator.htm" class="form-vertical container" onsubmit="return validateForm()">
                     <div class="form-group col-md-12">
-                        <label for="firstname" class=" container col-md-5">Name:</label>
+                        <label for="firstname" class="container col-md-5">Name:</label>
                         <input id="fname" type="text" name="firstname" class="container col-md-7" placeholder="Name">
                     </div>
                     <div class="form-group col-md-12">
