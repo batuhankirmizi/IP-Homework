@@ -41,7 +41,7 @@
                         <li><a href="usefullinks.htm">Useful Links</a></li>
                         <li><a href="aboutme.htm">About Me</a></li>
                         <li><a href="contactme.htm">Contact Me</a></li>
-                        <li class="active"><a href="registration.htm">Registration</a></li>
+                        <li class="active"><a href="calculator.htm">Calculator</a></li>
                     </ul>
                 </div>
             </div>
@@ -52,31 +52,31 @@
                 <center> <input type="text" value="0" id="text" class="numbersbox" readonly> </center>
                 
                 <div>
-                    <input type="button" value="7" class="button" onclick="print(7)">
-                    <input type="button" value="8" class="button" onclick="print(8)">
-                    <input type="button" value="9" class="button" onclick="print(9)">
+                    <input type="button" value="7" class="button" onclick="printNum(7)">
+                    <input type="button" value="8" class="button" onclick="printNum(8)">
+                    <input type="button" value="9" class="button" onclick="printNum(9)">
                 </div>
                 
                 <br>
                 
                 <div>
-                    <input type="button" value="4" class="button" onclick="print(4)">
-                    <input type="button" value="5" class="button" onclick="print(5)">
-                    <input type="button" value="6" class="button" onclick="print(6)">
+                    <input type="button" value="4" class="button" onclick="printNum(4)">
+                    <input type="button" value="5" class="button" onclick="printNum(5)">
+                    <input type="button" value="6" class="button" onclick="printNum(6)">
                 </div>
                 
                 <br>
                 
                 <div>
-                    <input type="button" value="1" class="button" onclick="print(1)">
-                    <input type="button" value="2" class="button" onclick="print(2)">
-                    <input type="button" value="3" class="button" onclick="print(3)">
+                    <input type="button" value="1" class="button" onclick="printNum(1)">
+                    <input type="button" value="2" class="button" onclick="printNum(2)">
+                    <input type="button" value="3" class="button" onclick="printNum(3)">
                 </div>
                 
                 <br>
                 
                 <div>
-                    <input type="button" value="0" class="button" onclick="print(0)">
+                    <input type="button" value="0" class="button" onclick="printNum(0)">
                     <input type="button" value="." class="button" onclick="appendDot()">
                     <input type="button" value="/" class="button" onclick="divide()">
                 </div>
@@ -102,12 +102,22 @@
 		<script>
 			var inputField = document.getElementById('text');
 			
-			function print(number) {
-				
-				inputField.value = inputField.value == "0" ? String(number): inputField.value + String(number);
+			function printNum(number) {
+				inputField.value = inputField.value == "0" ? String(number) : inputField.value + String(number);
 			}
 			
 			function appendDot() {
+				if(inputField.value.substring(inputField.value.length - 2, inputField.value.length - 1) == "+" ||
+				   inputField.value.substring(inputField.value.length - 2, inputField.value.length - 1) == "-" ||
+				   inputField.value.substring(inputField.value.length - 2, inputField.value.length - 1) == "*" ||
+				   inputField.value.substring(inputField.value.length - 2, inputField.value.length - 1) == "/") return;
+				
+				if(inputField.value.substring(inputField.value.length - 1, inputField.value) == ".") return;
+				
+				if((!inputField.value.includes("+") && !inputField.value.includes("*") &&
+				    !inputField.value.includes("/") && !inputField.value.includes("-")) &&
+				     inputField.value.includes(".") && inputField.value.split(".").length - 1 >= 2) return;
+				
 				inputField.value += ".";
 			}
 			
@@ -116,7 +126,7 @@
 			}
 			
 			function add() {
-				if(inputField.value.includes("+")) {
+				if(inputField.value.includes("+") || inputField.value.includes("-") || inputField.value.includes("*") || inputField.value.includes("/")) {
 					return;
 				}
 				
@@ -124,7 +134,7 @@
 			}
 			
 			function subtract() {
-				if(inputField.value.includes("-")) {
+				if(inputField.value.includes("+") || inputField.value.includes("-") || inputField.value.includes("*") || inputField.value.includes("/")) {
 					return;
 				}
 				
@@ -132,7 +142,7 @@
 			}
 			
 			function multiply() {
-				if(inputField.value.includes("*")) {
+				if(inputField.value.includes("+") || inputField.value.includes("-") || inputField.value.includes("*") || inputField.value.includes("/")) {
 					return;
 				}
 				
@@ -140,7 +150,7 @@
 			}
 			
 			function divide() {
-				if(inputField.value.includes("/")) {
+				if(inputField.value.includes("+") || inputField.value.includes("-") || inputField.value.includes("*") || inputField.value.includes("/")) {
 					return;
 				}
 				
@@ -148,6 +158,10 @@
 			}
 			
 			function oneover() {
+				if(inputField.value.includes("+") || inputField.value.includes("-") || inputField.value.includes("*") || inputField.value.includes("/")) {
+					return;
+				}
+				
 				inputField.value = parseFloat(1 / inputField.value);
 			}
 			
